@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shop by Brand | HIMA Supply</title>
+  <meta name="description" content="Browse featured HVAC brands, equipment families, and brand-led shopping paths on the HIMA Supply storefront." />
+  <style>
+    :root {
+      --bg: #f4f7fb;
+      --surface: #ffffff;
+      --surface-2: #eef3f9;
+      --text: #17253a;
+      --muted: #61758f;
+      --line: #d8e2ef;
+      --brand: #0d3f8a;
+      --brand-2: #195fc7;
+      --accent: #ff8a00;
+      --max: 1240px;
+      --shadow: 0 18px 40px rgba(22, 37, 58, 0.08);
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: Inter, Arial, sans-serif; background: var(--bg); color: var(--text); line-height: 1.55; }
+    a { text-decoration: none; color: inherit; }
+    .wrap { width: min(var(--max), calc(100% - 28px)); margin: 0 auto; }
+    .topbar { background: #0f2749; color: #d7e4f8; font-size: 13px; }
+    .topbar-inner { display: flex; justify-content: space-between; gap: 16px; padding: 10px 0; flex-wrap: wrap; }
+    .topbar strong { color: white; }
+    .header { background: white; border-bottom: 1px solid var(--line); position: sticky; top: 0; z-index: 50; }
+    .header-main { display: grid; grid-template-columns: 260px 1fr 220px; gap: 18px; align-items: center; padding: 16px 0; }
+    .brand { display: flex; align-items: center; gap: 12px; }
+    .brand img { width: 42px; height: 42px; object-fit: cover; border-radius: 10px; border: 1px solid var(--line); background: white; }
+    .brand-title { font-weight: 800; font-size: 28px; line-height: 1; color: var(--brand); }
+    .brand small { display: block; margin-top: 6px; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); font-weight: 700; }
+    .search { display: flex; align-items: center; gap: 10px; border: 1px solid var(--line); background: var(--surface-2); border-radius: 999px; padding: 10px 16px; }
+    .search input { width: 100%; border: 0; outline: 0; background: transparent; font: inherit; color: var(--text); }
+    .header-cta { display: flex; align-items: center; justify-content: flex-end; gap: 10px; flex-wrap: wrap; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; padding: 11px 16px; border-radius: 999px; font-weight: 700; border: 1px solid transparent; }
+    .btn-primary { background: var(--brand-2); color: white; }
+    .btn-secondary { background: white; border-color: var(--line); color: var(--text); }
+    .btn-accent { background: var(--accent); color: white; }
+    .mega-nav { border-top: 1px solid var(--line); background: white; }
+    .mega-nav-inner { display: flex; gap: 18px; flex-wrap: wrap; padding: 12px 0; font-size: 14px; font-weight: 700; color: #29476a; }
+    section { padding: 18px 0; }
+    .panel, .card, .brand-box { background: white; border: 1px solid var(--line); border-radius: 24px; box-shadow: var(--shadow); }
+    .panel { padding: 30px; }
+    .grid-3, .brands { display: grid; gap: 18px; }
+    .grid-3 { grid-template-columns: repeat(3, 1fr); }
+    .brands { grid-template-columns: repeat(3, 1fr); }
+    .card, .brand-box { padding: 22px; }
+    .pill { display: inline-block; margin-bottom: 12px; padding: 6px 10px; border-radius: 999px; background: #e9f1fd; color: var(--brand); font-size: 12px; font-weight: 800; text-transform: uppercase; }
+    h1 { margin: 0 0 12px; font-size: clamp(34px, 5vw, 52px); line-height: 1.04; }
+    h2 { margin: 0 0 12px; font-size: 28px; }
+    h3 { margin: 0 0 10px; font-size: 22px; }
+    p { color: var(--muted); }
+    .brand-box { text-align: left; }
+    .brand-box strong { display: block; font-size: 24px; color: #33557d; margin-bottom: 8px; }
+    .note { padding: 16px; border-radius: 18px; background: #eef6ff; border: 1px solid #d6e8ff; color: #29476a; margin-top: 14px; }
+    footer { margin-top: 24px; padding: 34px 0 40px; background: #102744; color: #cfddf3; }
+    .footer-grid { display: grid; grid-template-columns: 1.3fr .8fr .8fr .9fr; gap: 18px; }
+    .footer-title { color: white; font-weight: 800; margin-bottom: 10px; }
+    .footer-links { display: grid; gap: 8px; font-size: 14px; }
+    @media (max-width: 980px) {
+      .header-main, .grid-3, .brands, .footer-grid { grid-template-columns: 1fr; }
+      .panel { padding: 24px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="wrap topbar-inner">
+      <div><strong>Shop by brand:</strong> browse equipment families, replacement-friendly lines, and contractor-familiar manufacturers</div>
+      <div>Need a cross-brand quote? <strong>Request pricing</strong></div>
+    </div>
+  </div>
+
+  <header class="header">
+    <div class="wrap header-main">
+      <a class="brand" href="index.html">
+        <img src="logo-hima-supply.png" alt="HIMA Supply logo" />
+        <div>
+          <div class="brand-title">HIMA Supply</div>
+          <small>Shop by Brand</small>
+        </div>
+      </a>
+      <label class="search" aria-label="Search brands and equipment">
+        <span>🔎</span>
+        <input type="text" placeholder="Search Goodman, Daikin, MRCOOL, condensers, mini splits..." />
+      </label>
+      <div class="header-cta">
+        <a class="btn btn-secondary" href="products.html">Browse Catalog</a>
+        <a class="btn btn-accent" href="request-quote.html">Request Quote</a>
+      </div>
+    </div>
+    <div class="mega-nav">
+      <div class="wrap mega-nav-inner">
+        <a href="category-air-conditioners.html">Air Conditioners</a>
+        <a href="category-heat-pumps.html">Heat Pumps</a>
+        <a href="category-mini-splits.html">Mini Splits</a>
+        <a href="category-furnaces.html">Furnaces</a>
+        <a href="category-air-handlers.html">Air Handlers</a>
+        <a href="category-package-units.html">Package Units</a>
+        <a href="category-parts-accessories.html">Parts & Accessories</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <div class="wrap panel">
+        <span class="pill">Brand navigation</span>
+        <h1>Shop featured HVAC brands through a supply-house style storefront</h1>
+        <p>Brand pages help the site feel like a real supply house catalog. They give visitors another way to shop besides category navigation and reinforce product breadth, trust, and replacement familiarity.</p>
+        <div class="note">This page should support product discovery and selling. It should reinforce that HIMA Supply is a selling platform, not a consulting brochure.</div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap brands">
+        <article class="brand-box"><span class="pill">Featured brand</span><strong>Goodman</strong><p>Residential split systems, furnaces, and replacement-friendly equipment lines for value-driven installs.</p></article>
+        <article class="brand-box"><span class="pill">Featured brand</span><strong>Daikin</strong><p>Broad equipment family coverage, including ducted and ductless product categories with premium positioning.</p></article>
+        <article class="brand-box"><span class="pill">Featured brand</span><strong>MRCOOL</strong><p>Ductless and installer-friendly categories with strong ecommerce potential and recognizable consumer demand.</p></article>
+        <article class="brand-box"><span class="pill">Featured brand</span><strong>Gree</strong><p>Mini split and inverter-oriented equipment families suitable for category-led landing pages.</p></article>
+        <article class="brand-box"><span class="pill">Featured brand</span><strong>Midea</strong><p>Accessory and ductless-led options with future potential for broader catalog merchandising.</p></article>
+        <article class="brand-box"><span class="pill">Featured brand</span><strong>Field Controls</strong><p>Accessory, IAQ, and controls-oriented products that support add-on sales and parts-driven commerce.</p></article>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap grid-3">
+        <article class="card">
+          <span class="pill">Why brands matter</span>
+          <h3>They make the catalog feel deeper</h3>
+          <p>Even in a static site, featured brands help buyers understand the site as a real equipment storefront with product breadth.</p>
+        </article>
+        <article class="card">
+          <span class="pill">Better navigation</span>
+          <h3>Shop by category or brand</h3>
+          <p>Strong supply-house sites let visitors move through category pages, product pages, and brand collections depending on how they shop.</p>
+        </article>
+        <article class="card">
+          <span class="pill">Future ready</span>
+          <h3>Easy path to filtered collections</h3>
+          <p>Later, this can evolve into brand-specific landing pages with product filters, price sorting, and featured inventory blocks.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-grid">
+      <div>
+        <div class="footer-title">HIMA Supply</div>
+        <p>HVAC supply house style storefront for equipment, parts, contractor purchasing, and quote-driven projects.</p>
+      </div>
+      <div>
+        <div class="footer-title">Shop</div>
+        <div class="footer-links">
+          <a href="products.html">Catalog</a>
+          <a href="category-air-conditioners.html">Air Conditioners</a>
+          <a href="category-heat-pumps.html">Heat Pumps</a>
+          <a href="category-parts-accessories.html">Parts & Accessories</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-title">Programs</div>
+        <div class="footer-links">
+          <a href="contractor-program.html">Contractor Accounts</a>
+          <a href="request-quote.html">Request Quote</a>
+          <a href="about.html">About</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-title">Support</div>
+        <div class="footer-links">
+          <a href="contact.html">Contact</a>
+          <a href="brands.html">Brands</a>
+          <a href="terms.html">Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

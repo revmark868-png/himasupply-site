@@ -1,0 +1,637 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HIMA Supply | HVAC Equipment, Parts & Contractor Supply</title>
+  <meta name="description" content="HIMA Supply is an HVAC supply house style website for equipment, parts, accessories, and contractor purchasing across residential and light commercial categories." />
+  <meta name="robots" content="index,follow" />
+  <style>
+    :root {
+      --bg: #f4f7fb;
+      --surface: #ffffff;
+      --surface-2: #eef3f9;
+      --text: #17253a;
+      --muted: #61758f;
+      --line: #d8e2ef;
+      --brand: #0d3f8a;
+      --brand-2: #195fc7;
+      --accent: #ff8a00;
+      --success: #0c8a5c;
+      --max: 1240px;
+      --shadow: 0 18px 40px rgba(22, 37, 58, 0.08);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, Arial, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.55;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    .wrap { width: min(var(--max), calc(100% - 28px)); margin: 0 auto; }
+    .topbar {
+      background: #0f2749;
+      color: #d7e4f8;
+      font-size: 13px;
+    }
+    .topbar-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 10px 0;
+      flex-wrap: wrap;
+    }
+    .topbar strong { color: white; }
+    .header {
+      background: white;
+      border-bottom: 1px solid var(--line);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+    .header-main {
+      display: grid;
+      grid-template-columns: 260px 1fr 220px;
+      gap: 18px;
+      align-items: center;
+      padding: 16px 0;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+    .brand img {
+      width: 54px;
+      height: 54px;
+      object-fit: cover;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      background: white;
+    }
+    .brand-title {
+      font-weight: 800;
+      font-size: 28px;
+      line-height: 1;
+      color: var(--brand);
+    }
+    .brand small {
+      display: block;
+      margin-top: 6px;
+      font-size: 11px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-weight: 700;
+    }
+    .search {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border: 1px solid var(--line);
+      background: var(--surface-2);
+      border-radius: 999px;
+      padding: 10px 16px;
+    }
+    .search input {
+      width: 100%;
+      border: 0;
+      outline: 0;
+      background: transparent;
+      font: inherit;
+      color: var(--text);
+    }
+    .header-cta {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 11px 16px;
+      border-radius: 999px;
+      font-weight: 700;
+      border: 1px solid transparent;
+      cursor: pointer;
+    }
+    .btn-primary { background: var(--brand-2); color: white; }
+    .btn-secondary { background: white; border-color: var(--line); color: var(--text); }
+    .btn-accent { background: var(--accent); color: white; }
+    .mega-nav {
+      border-top: 1px solid var(--line);
+      background: white;
+    }
+    .mega-nav-inner {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      padding: 12px 0;
+      font-size: 14px;
+      font-weight: 700;
+      color: #29476a;
+    }
+    .mega-nav a:hover { color: var(--brand-2); }
+    .hero {
+      padding: 28px 0 20px;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap: 20px;
+      align-items: stretch;
+    }
+    .panel {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+    }
+    .hero-copy {
+      padding: 36px;
+      background: linear-gradient(135deg, #11366f 0%, #1b5fc0 100%);
+      color: white;
+    }
+    .eyebrow {
+      display: inline-block;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.14);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: .05em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+    h1 {
+      margin: 0 0 14px;
+      font-size: clamp(34px, 5vw, 56px);
+      line-height: 1.03;
+      letter-spacing: -0.03em;
+      max-width: 12ch;
+    }
+    .hero-copy p {
+      margin: 0 0 14px;
+      font-size: 18px;
+      color: rgba(255,255,255,.9);
+      max-width: 60ch;
+    }
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 24px;
+    }
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 26px;
+    }
+    .stat {
+      padding: 14px;
+      border-radius: 16px;
+      background: rgba(255,255,255,.12);
+      border: 1px solid rgba(255,255,255,.18);
+    }
+    .stat strong {
+      display: block;
+      font-size: 18px;
+      margin-bottom: 4px;
+    }
+    .hero-side {
+      padding: 24px;
+    }
+    .hero-side h2 {
+      margin: 0 0 12px;
+      font-size: 24px;
+    }
+    .quick-links {
+      display: grid;
+      gap: 12px;
+      margin-top: 18px;
+    }
+    .quick-links a {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 18px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: var(--surface-2);
+      font-weight: 700;
+    }
+    section { padding: 14px 0; }
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 16px;
+      margin-bottom: 18px;
+      flex-wrap: wrap;
+    }
+    .section-head h2 {
+      margin: 0;
+      font-size: clamp(28px, 3.5vw, 40px);
+      line-height: 1.1;
+    }
+    .section-head p {
+      margin: 6px 0 0;
+      color: var(--muted);
+      max-width: 70ch;
+    }
+    .grid-4, .grid-3, .grid-2 {
+      display: grid;
+      gap: 18px;
+    }
+    .grid-4 { grid-template-columns: repeat(4, 1fr); }
+    .grid-3 { grid-template-columns: repeat(3, 1fr); }
+    .grid-2 { grid-template-columns: repeat(2, 1fr); }
+    .card {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      box-shadow: var(--shadow);
+      padding: 22px;
+    }
+    .category-card h3, .product-card h3, .value-card h3 {
+      margin: 0 0 10px;
+      font-size: 22px;
+      line-height: 1.2;
+    }
+    .muted { color: var(--muted); }
+    .pill {
+      display: inline-block;
+      margin-bottom: 12px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: #e9f1fd;
+      color: var(--brand);
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+    }
+    .product-meta {
+      margin: 14px 0;
+      padding: 0;
+      list-style: none;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .product-meta li { margin-bottom: 6px; }
+    .price {
+      font-size: 26px;
+      font-weight: 800;
+      color: var(--brand);
+      margin-bottom: 10px;
+    }
+    .price small {
+      font-size: 13px;
+      color: var(--muted);
+      font-weight: 600;
+    }
+    .actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 14px;
+    }
+    .brands {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 14px;
+    }
+    .brand-box {
+      padding: 18px 12px;
+      text-align: center;
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      font-weight: 800;
+      color: #33557d;
+      box-shadow: var(--shadow);
+    }
+    .cta {
+      padding: 32px;
+      background: linear-gradient(135deg, #0d3f8a 0%, #0a7d74 100%);
+      color: white;
+    }
+    .cta h2 { margin: 0 0 10px; font-size: clamp(28px, 4vw, 42px); }
+    .cta p { margin: 0; color: rgba(255,255,255,.9); max-width: 70ch; }
+    footer {
+      margin-top: 24px;
+      padding: 26px 0 50px;
+      background: #102744;
+      color: #cfddf3;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr .8fr .8fr;
+      gap: 20px;
+    }
+    .footer-title {
+      font-weight: 800;
+      color: white;
+      margin-bottom: 10px;
+    }
+    .footer-links a {
+      display: block;
+      margin-bottom: 8px;
+      color: #cfddf3;
+    }
+    @media (max-width: 1100px) {
+      .header-main { grid-template-columns: 1fr; }
+      .header-cta { justify-content: flex-start; }
+      .hero-grid, .grid-4, .grid-3, .grid-2, .footer-grid, .brands { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 760px) {
+      .hero-grid, .grid-4, .grid-3, .grid-2, .footer-grid, .brands, .hero-stats { grid-template-columns: 1fr; }
+      .hero-copy, .hero-side, .cta { padding: 24px; }
+      .brand-title { font-size: 24px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="wrap topbar-inner">
+      <div><strong>Supply House Style Storefront</strong> · Equipment, parts, accessories, and quote support</div>
+      <div>Sales: <strong>(469) 000-0000</strong> · Email: <strong>sales@himasupply.com</strong></div>
+    </div>
+  </div>
+
+  <header class="header">
+    <div class="wrap header-main">
+      <a class="brand" href="index.html" aria-label="HIMA Supply home">
+        <img src="logo-hima-supply.png" alt="HIMA Supply logo" />
+        <div>
+          <div class="brand-title">HIMA Supply</div>
+          <small>HVAC Equipment & Supply House</small>
+        </div>
+      </a>
+      <div class="search" aria-label="catalog search preview">
+        <span>🔎</span>
+        <input type="text" placeholder="Search condensers, mini splits, furnaces, coils, thermostats, accessories..." />
+      </div>
+      <div class="header-cta">
+        <a class="btn btn-secondary" href="contractor-program.html">Contractor Account</a>
+        <a class="btn btn-primary" href="request-quote.html">Request Quote</a>
+      </div>
+    </div>
+    <div class="mega-nav">
+      <div class="wrap mega-nav-inner">
+        <a href="products.html">All Categories</a>
+        <a href="category-air-conditioners.html">Air Conditioners</a>
+        <a href="category-heat-pumps.html">Heat Pumps</a>
+        <a href="category-mini-splits.html">Mini Splits</a>
+        <a href="category-furnaces.html">Furnaces</a>
+        <a href="category-air-handlers.html">Air Handlers & Coils</a>
+        <a href="category-package-units.html">Package Units</a>
+        <a href="category-parts-accessories.html">Parts & Accessories</a>
+        <a href="brands.html">Brands</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div class="panel hero-copy">
+          <span class="eyebrow">HVAC supply house layout</span>
+          <h1>Shop HVAC equipment, systems, parts, and accessories</h1>
+          <p>HIMA Supply should feel like a real supply house storefront—not a consulting page. This homepage is now centered on product categories, featured equipment, contractor purchasing, and catalog-first navigation.</p>
+          <p>Use it to guide buyers into category pages, product detail pages, quote requests, and contractor account actions—just like a modern HVAC ecommerce-style site.</p>
+          <div class="hero-actions">
+            <a class="btn btn-accent" href="products.html">Shop All Categories</a>
+            <a class="btn btn-secondary" href="request-quote.html" style="background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.24);color:white;">Get a Fast Quote</a>
+          </div>
+          <div class="hero-stats">
+            <div class="stat"><strong>Residential</strong><span>split systems, furnaces, mini splits, accessories</span></div>
+            <div class="stat"><strong>Light Commercial</strong><span>package units, replacement equipment, project quotes</span></div>
+            <div class="stat"><strong>Contractor Ready</strong><span>account pricing, volume inquiries, order support</span></div>
+          </div>
+        </div>
+        <div class="panel hero-side">
+          <h2>Popular shopping paths</h2>
+          <p class="muted">These quick links make the site behave like a supply catalog first, with support pages acting as backup—not the main story.</p>
+          <div class="quick-links">
+            <a href="category-air-conditioners.html"><span>Central Air Conditioners</span><span>→</span></a>
+            <a href="category-heat-pumps.html"><span>Heat Pumps</span><span>→</span></a>
+            <a href="category-mini-splits.html"><span>Ductless Mini Splits</span><span>→</span></a>
+            <a href="category-furnaces.html"><span>Gas Furnaces</span><span>→</span></a>
+            <a href="category-parts-accessories.html"><span>Parts & Accessories</span><span>→</span></a>
+            <a href="contractor-program.html"><span>Contractor Accounts</span><span>→</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <h2>Shop by category</h2>
+            <p>Supply-house style sites win when product categories are obvious. Buyers should immediately see equipment groups, not just service language.</p>
+          </div>
+        </div>
+        <div class="grid-4">
+          <article class="card category-card">
+            <span class="pill">Cooling</span>
+            <h3>Air Conditioners</h3>
+            <p class="muted">Central AC condensers, matched cooling systems, replacement outdoor units, and application-driven equipment options.</p>
+            <div class="actions"><a class="btn btn-secondary" href="category-air-conditioners.html">Browse Category</a></div>
+          </article>
+          <article class="card category-card">
+            <span class="pill">Heating & Cooling</span>
+            <h3>Heat Pumps</h3>
+            <p class="muted">Whole-home heat pump systems, inverter options, dual-fuel compatible equipment, and replacement units.</p>
+            <div class="actions"><a class="btn btn-secondary" href="category-heat-pumps.html">Browse Category</a></div>
+          </article>
+          <article class="card category-card">
+            <span class="pill">Ductless</span>
+            <h3>Mini Splits</h3>
+            <p class="muted">Single-zone and multi-zone ductless systems for residential upgrades, additions, garages, and small commercial spaces.</p>
+            <div class="actions"><a class="btn btn-secondary" href="category-mini-splits.html">Browse Category</a></div>
+          </article>
+          <article class="card category-card">
+            <span class="pill">Heating</span>
+            <h3>Furnaces</h3>
+            <p class="muted">Gas furnaces, upflow and horizontal configurations, matched heating systems, and replacement applications.</p>
+            <div class="actions"><a class="btn btn-secondary" href="category-furnaces.html">Browse Category</a></div>
+          </article>
+          <article class="card category-card">
+            <span class="pill">Indoor Equipment</span>
+            <h3>Air Handlers & Coils</h3>
+            <p class="muted">Air handlers, evaporator coils, matched indoor sections, and system completion components.</p>
+            <div class="actions"><a class="btn btn-secondary" href="category-air-handlers.html">Browse Category</a></div>
+          </article>
+          <article class="card category-card">
+            <span class="pill">Commercial</span>
+            <h3>Package Units</h3>
+            <p class="muted">Rooftop and packaged style solutions for light commercial jobs and packaged residential replacements.</p>
+            <div class="actions"><a class="btn btn-secondary" href="category-package-units.html">Browse Category</a></div>
+          </article>
+          <article class="card category-card">
+            <span class="pill">Add-ons</span>
+            <h3>Parts & Accessories</h3>
+            <p class="muted">Thermostats, line sets, disconnects, pads, filters, installation accessories, and replacement parts.</p>
+            <div class="actions"><a class="btn btn-secondary" href="category-parts-accessories.html">Browse Category</a></div>
+          </article>
+          <article class="card category-card">
+            <span class="pill">Full Catalog</span>
+            <h3>View All Product Lines</h3>
+            <p class="muted">Use one central category hub page to browse all major product groups, featured items, and shopping paths.</p>
+            <div class="actions"><a class="btn btn-primary" href="products.html">Open Catalog Hub</a></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <h2>Featured equipment</h2>
+            <p>These cards are structured more like a real HVAC storefront: category, headline, pricing signal, core specs, and product-driven calls to action.</p>
+          </div>
+          <a href="products.html" class="btn btn-secondary">View More Products</a>
+        </div>
+        <div class="grid-3">
+          <article class="card product-card">
+            <span class="pill">Featured System</span>
+            <h3>410A Split System Inventory</h3>
+            <div class="price">Call for pricing <small>or request quote</small></div>
+            <p class="muted">Inventory-driven split system positioning for buyers who need available equipment, not brochure language.</p>
+            <ul class="product-meta">
+              <li>Category: Split system equipment</li>
+              <li>Refrigerant: 410A inventory opportunities</li>
+              <li>Best CTA: View product + request quote</li>
+            </ul>
+            <div class="actions">
+              <a class="btn btn-primary" href="product-410a-split-system.html">View Product</a>
+              <a class="btn btn-secondary" href="request-quote.html">Request Quote</a>
+            </div>
+          </article>
+          <article class="card product-card">
+            <span class="pill">A2L Transition</span>
+            <h3>Heat Pump Equipment Inquiry</h3>
+            <div class="price">Check availability <small>project based</small></div>
+            <p class="muted">A better example of supply-house selling: application, inventory, model fit, and compliance matter before checkout.</p>
+            <ul class="product-meta">
+              <li>Category: Heat pump systems</li>
+              <li>Use case: replacement and project quotes</li>
+              <li>Best CTA: availability + quote request</li>
+            </ul>
+            <div class="actions">
+              <a class="btn btn-primary" href="product-heat-pump.html">View Product</a>
+              <a class="btn btn-secondary" href="request-quote.html">Check Availability</a>
+            </div>
+          </article>
+          <article class="card product-card">
+            <span class="pill">Accessory Add-on</span>
+            <h3>Accessory Installation Kit</h3>
+            <div class="price">From $89 <small>sample accessory pricing</small></div>
+            <p class="muted">Smaller items should look more ecommerce-ready, because they are the best candidates for future direct purchase flows.</p>
+            <ul class="product-meta">
+              <li>Category: Accessories</li>
+              <li>Use case: install support and add-ons</li>
+              <li>Best CTA: view product + add to quote</li>
+            </ul>
+            <div class="actions">
+              <a class="btn btn-primary" href="product-accessory-kit.html">View Product</a>
+              <a class="btn btn-secondary" href="request-quote.html">Add to Quote</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <h2>Shop by brand</h2>
+            <p>Brand blocks help the site feel like a product marketplace, not a brochure. Even in static mode, this improves buyer trust.</p>
+          </div>
+          <a class="btn btn-secondary" href="brands.html">View Brand Page</a>
+        </div>
+        <div class="brands">
+          <div class="brand-box">Goodman</div>
+          <div class="brand-box">MRCOOL</div>
+          <div class="brand-box">Gree</div>
+          <div class="brand-box">Daikin</div>
+          <div class="brand-box">Midea</div>
+          <div class="brand-box">Field Controls</div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap grid-3">
+        <article class="card value-card">
+          <span class="pill">Why Buy Here</span>
+          <h3>Category-driven shopping experience</h3>
+          <p class="muted">The site now prioritizes catalog structure, category entry points, and product pages—much closer to a supply house pattern than a consulting website.</p>
+        </article>
+        <article class="card value-card">
+          <span class="pill">Contractor Friendly</span>
+          <h3>Built for quote requests and account pricing</h3>
+          <p class="muted">Large equipment should not pretend to be generic retail. It should route contractors to account setup, fast quote requests, and availability checks.</p>
+        </article>
+        <article class="card value-card">
+          <span class="pill">Future Ready</span>
+          <h3>Easy path to ecommerce later</h3>
+          <p class="muted">Once categories and product detail patterns are right, it becomes much easier to layer in filters, inventory logic, pricing feeds, and checkout tools later.</p>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap panel cta">
+        <h2>Need equipment pricing, availability, or a contractor account?</h2>
+        <p>Use quote requests and contractor account flows as support tools—but keep the storefront centered on categories, products, and purchase intent. That is what makes it feel like an HVAC supply house.</p>
+        <div class="actions" style="margin-top:18px;">
+          <a class="btn btn-accent" href="request-quote.html">Request a Quote</a>
+          <a class="btn btn-secondary" href="contractor-program.html" style="background:rgba(255,255,255,.12);border-color:rgba(255,255,255,.22);color:white;">Open Contractor Program</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-grid">
+      <div>
+        <div class="footer-title">HIMA Supply</div>
+        <div>HVAC equipment, parts, and contractor purchasing flows in a supply-house style website structure.</div>
+      </div>
+      <div class="footer-links">
+        <div class="footer-title">Categories</div>
+        <a href="category-air-conditioners.html">Air Conditioners</a>
+        <a href="category-heat-pumps.html">Heat Pumps</a>
+        <a href="category-mini-splits.html">Mini Splits</a>
+        <a href="category-furnaces.html">Furnaces</a>
+      </div>
+      <div class="footer-links">
+        <div class="footer-title">Support</div>
+        <a href="request-quote.html">Request Quote</a>
+        <a href="contractor-program.html">Contractor Program</a>
+        <a href="contact.html">Contact</a>
+        <a href="brands.html">Brands</a>
+      </div>
+      <div class="footer-links">
+        <div class="footer-title">Company</div>
+        <a href="about.html">About</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

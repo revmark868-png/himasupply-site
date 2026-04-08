@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Sales | HIMA Supply</title>
+  <meta name="description" content="Contact HIMA Supply for equipment quotes, inventory checks, contractor account support, and HVAC purchasing questions." />
+  <style>
+    :root {
+      --bg: #f4f7fb;
+      --surface: #ffffff;
+      --surface-2: #eef3f9;
+      --text: #17253a;
+      --muted: #61758f;
+      --line: #d8e2ef;
+      --brand: #0d3f8a;
+      --brand-2: #195fc7;
+      --accent: #ff8a00;
+      --max: 1240px;
+      --shadow: 0 18px 40px rgba(22, 37, 58, 0.08);
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: Inter, Arial, sans-serif; background: var(--bg); color: var(--text); line-height: 1.55; }
+    a { text-decoration: none; color: inherit; }
+    .wrap { width: min(var(--max), calc(100% - 28px)); margin: 0 auto; }
+    .topbar { background: #0f2749; color: #d7e4f8; font-size: 13px; }
+    .topbar-inner { display: flex; justify-content: space-between; gap: 16px; padding: 10px 0; flex-wrap: wrap; }
+    .topbar strong { color: white; }
+    .header { background: white; border-bottom: 1px solid var(--line); position: sticky; top: 0; z-index: 50; }
+    .header-main { display: grid; grid-template-columns: 260px 1fr 220px; gap: 18px; align-items: center; padding: 16px 0; }
+    .brand { display: flex; align-items: center; gap: 12px; }
+    .brand img { width: 42px; height: 42px; object-fit: cover; border-radius: 10px; border: 1px solid var(--line); background: white; }
+    .brand-title { font-weight: 800; font-size: 28px; line-height: 1; color: var(--brand); }
+    .brand small { display: block; margin-top: 6px; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); font-weight: 700; }
+    .search { display: flex; align-items: center; gap: 10px; border: 1px solid var(--line); background: var(--surface-2); border-radius: 999px; padding: 10px 16px; }
+    .search input { width: 100%; border: 0; outline: 0; background: transparent; font: inherit; color: var(--text); }
+    .header-cta { display: flex; align-items: center; justify-content: flex-end; gap: 10px; flex-wrap: wrap; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; padding: 11px 16px; border-radius: 999px; font-weight: 700; border: 1px solid transparent; }
+    .btn-primary { background: var(--brand-2); color: white; }
+    .btn-secondary { background: white; border-color: var(--line); color: var(--text); }
+    .btn-accent { background: var(--accent); color: white; }
+    .mega-nav { border-top: 1px solid var(--line); background: white; }
+    .mega-nav-inner { display: flex; gap: 18px; flex-wrap: wrap; padding: 12px 0; font-size: 14px; font-weight: 700; color: #29476a; }
+    section { padding: 18px 0; }
+    .panel, .card { background: white; border: 1px solid var(--line); border-radius: 24px; box-shadow: var(--shadow); }
+    .panel { padding: 30px; }
+    .grid-2, .grid-3 { display: grid; gap: 18px; }
+    .grid-2 { grid-template-columns: 1fr 1fr; }
+    .grid-3 { grid-template-columns: repeat(3, 1fr); }
+    .card { padding: 22px; }
+    .pill { display: inline-block; margin-bottom: 12px; padding: 6px 10px; border-radius: 999px; background: #e9f1fd; color: var(--brand); font-size: 12px; font-weight: 800; text-transform: uppercase; }
+    h1 { margin: 0 0 12px; font-size: clamp(34px, 5vw, 52px); line-height: 1.04; }
+    h2 { margin: 0 0 12px; font-size: 28px; }
+    h3 { margin: 0 0 10px; font-size: 22px; }
+    p, li { color: var(--muted); }
+    ul { padding-left: 18px; }
+    .actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 16px; }
+    .note { padding: 16px; border-radius: 18px; background: #eef6ff; border: 1px solid #d6e8ff; color: #29476a; margin-top: 14px; }
+    footer { margin-top: 24px; padding: 34px 0 40px; background: #102744; color: #cfddf3; }
+    .footer-grid { display: grid; grid-template-columns: 1.3fr .8fr .8fr .9fr; gap: 18px; }
+    .footer-title { color: white; font-weight: 800; margin-bottom: 10px; }
+    .footer-links { display: grid; gap: 8px; font-size: 14px; }
+    @media (max-width: 980px) {
+      .header-main, .grid-2, .grid-3, .footer-grid { grid-template-columns: 1fr; }
+      .panel { padding: 24px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="wrap topbar-inner">
+      <div><strong>Sales desk:</strong> pricing requests, availability checks, contractor account support, and replacement equipment help</div>
+      <div>Best contact: <strong>sales@himasupply.com</strong></div>
+    </div>
+  </div>
+
+  <header class="header">
+    <div class="wrap header-main">
+      <a class="brand" href="index.html">
+        <img src="logo-hima-supply.png" alt="HIMA Supply logo" />
+        <div>
+          <div class="brand-title">HIMA Supply</div>
+          <small>Sales & Customer Support</small>
+        </div>
+      </a>
+      <label class="search" aria-label="Search equipment">
+        <span>🔎</span>
+        <input type="text" placeholder="Search equipment, brands, replacement categories, accessories..." />
+      </label>
+      <div class="header-cta">
+        <a class="btn btn-secondary" href="products.html">Browse Catalog</a>
+        <a class="btn btn-accent" href="request-quote.html">Request Quote</a>
+      </div>
+    </div>
+    <div class="mega-nav">
+      <div class="wrap mega-nav-inner">
+        <a href="category-air-conditioners.html">Air Conditioners</a>
+        <a href="category-heat-pumps.html">Heat Pumps</a>
+        <a href="category-mini-splits.html">Mini Splits</a>
+        <a href="category-furnaces.html">Furnaces</a>
+        <a href="category-air-handlers.html">Air Handlers</a>
+        <a href="category-package-units.html">Package Units</a>
+        <a href="category-parts-accessories.html">Parts & Accessories</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <div class="wrap grid-2">
+        <div class="panel">
+          <span class="pill">Sales and support</span>
+          <h1>Contact the HIMA Supply sales desk</h1>
+          <p>This page should feel like a real equipment sales contact page, with pricing questions, inventory checks, contractor account requests, and category-specific help routed through a commercial workflow.</p>
+          <div class="actions">
+            <a class="btn btn-accent" href="mailto:sales@himasupply.com?subject=HIMA%20Supply%20Sales%20Inquiry">Email Sales</a>
+            <a class="btn btn-primary" href="request-quote.html">Request Quote</a>
+          </div>
+          <div class="note">Good supply-house sites keep contact pages simple and commercial. The contact page supports the store, it does not replace the store.</div>
+        </div>
+        <div class="panel">
+          <h2>Best reasons to contact us</h2>
+          <ul>
+            <li>Equipment pricing and quote requests</li>
+            <li>Product availability checks</li>
+            <li>Contractor account setup</li>
+            <li>Replacement equipment matching</li>
+            <li>Project and volume purchasing support</li>
+          </ul>
+          <div class="note">Use contact for specific purchasing needs. Use category and product pages for browsing, shortlist building, and quote-ready product selection.</div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap grid-3">
+        <article class="card">
+          <span class="pill">Phone</span>
+          <h3>(469) 000-0000</h3>
+          <p>Use for fast pricing, stock questions, and contractor account support.</p>
+        </article>
+        <article class="card">
+          <span class="pill">Email</span>
+          <h3>sales@himasupply.com</h3>
+          <p>Best for quote requests, equipment lists, and product detail questions.</p>
+        </article>
+        <article class="card">
+          <span class="pill">Hours</span>
+          <h3>Mon–Fri · 8:00 AM–5:00 PM</h3>
+          <p>Example business hours for sales desk, quote follow-up, and availability support.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-grid">
+      <div>
+        <div class="footer-title">HIMA Supply</div>
+        <p>HVAC supply house style storefront for equipment, parts, contractor purchasing, and quote-driven projects.</p>
+      </div>
+      <div>
+        <div class="footer-title">Shop</div>
+        <div class="footer-links">
+          <a href="products.html">Catalog</a>
+          <a href="category-air-conditioners.html">Air Conditioners</a>
+          <a href="category-heat-pumps.html">Heat Pumps</a>
+          <a href="category-parts-accessories.html">Parts & Accessories</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-title">Programs</div>
+        <div class="footer-links">
+          <a href="contractor-program.html">Contractor Accounts</a>
+          <a href="request-quote.html">Request Quote</a>
+          <a href="brands.html">Brands</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-title">Support</div>
+        <div class="footer-links">
+          <a href="contact.html">Contact</a>
+          <a href="about.html">About</a>
+          <a href="terms.html">Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

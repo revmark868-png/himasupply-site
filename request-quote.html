@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Request Equipment Pricing | HIMA Supply</title>
+  <meta name="description" content="Request equipment pricing, inventory checks, contractor pricing, and project quote support from HIMA Supply." />
+  <style>
+    :root {
+      --bg: #f4f7fb;
+      --surface: #ffffff;
+      --surface-2: #eef3f9;
+      --text: #17253a;
+      --muted: #61758f;
+      --line: #d8e2ef;
+      --brand: #0d3f8a;
+      --brand-2: #195fc7;
+      --accent: #ff8a00;
+      --success: #0c8a5c;
+      --max: 1240px;
+      --shadow: 0 18px 40px rgba(22, 37, 58, 0.08);
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: Inter, Arial, sans-serif; background: var(--bg); color: var(--text); line-height: 1.55; }
+    a { text-decoration: none; color: inherit; }
+    .wrap { width: min(var(--max), calc(100% - 28px)); margin: 0 auto; }
+    .topbar { background: #0f2749; color: #d7e4f8; font-size: 13px; }
+    .topbar-inner { display: flex; justify-content: space-between; gap: 16px; padding: 10px 0; flex-wrap: wrap; }
+    .topbar strong { color: white; }
+    .header { background: white; border-bottom: 1px solid var(--line); position: sticky; top: 0; z-index: 50; }
+    .header-main { display: grid; grid-template-columns: 260px 1fr 220px; gap: 18px; align-items: center; padding: 16px 0; }
+    .brand { display: flex; align-items: center; gap: 12px; }
+    .brand img { width: 42px; height: 42px; object-fit: cover; border-radius: 10px; border: 1px solid var(--line); background: white; }
+    .brand-title { font-weight: 800; font-size: 28px; line-height: 1; color: var(--brand); }
+    .brand small { display: block; margin-top: 6px; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); font-weight: 700; }
+    .search { display: flex; align-items: center; gap: 10px; border: 1px solid var(--line); background: var(--surface-2); border-radius: 999px; padding: 10px 16px; }
+    .search input { width: 100%; border: 0; outline: 0; background: transparent; font: inherit; color: var(--text); }
+    .header-cta { display: flex; align-items: center; justify-content: flex-end; gap: 10px; flex-wrap: wrap; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; padding: 11px 16px; border-radius: 999px; font-weight: 700; border: 1px solid transparent; }
+    .btn-primary { background: var(--brand-2); color: white; }
+    .btn-secondary { background: white; border-color: var(--line); color: var(--text); }
+    .btn-accent { background: var(--accent); color: white; }
+    .mega-nav { border-top: 1px solid var(--line); background: white; }
+    .mega-nav-inner { display: flex; gap: 18px; flex-wrap: wrap; padding: 12px 0; font-size: 14px; font-weight: 700; color: #29476a; }
+    .mega-nav a:hover { color: var(--brand-2); }
+    section { padding: 18px 0; }
+    .panel, .card { background: white; border: 1px solid var(--line); border-radius: 24px; box-shadow: var(--shadow); }
+    .panel { padding: 30px; }
+    .hero-grid, .grid-2, .grid-3 { display: grid; gap: 18px; }
+    .hero-grid { grid-template-columns: 1.1fr .9fr; }
+    .grid-2 { grid-template-columns: repeat(2, 1fr); }
+    .grid-3 { grid-template-columns: repeat(3, 1fr); }
+    .card { padding: 22px; }
+    .pill { display: inline-block; margin-bottom: 12px; padding: 6px 10px; border-radius: 999px; background: #e9f1fd; color: var(--brand); font-size: 12px; font-weight: 800; text-transform: uppercase; }
+    h1 { margin: 0 0 12px; font-size: clamp(34px, 5vw, 52px); line-height: 1.04; }
+    h2 { margin: 0 0 12px; font-size: 28px; }
+    h3 { margin: 0 0 10px; font-size: 22px; }
+    p, label, li { color: var(--muted); }
+    form { display: grid; gap: 14px; }
+    input, textarea, select { width: 100%; padding: 14px 16px; border-radius: 14px; border: 1px solid #d9e4f0; background: #f8fbff; color: var(--text); font: inherit; }
+    textarea { min-height: 150px; resize: vertical; }
+    .note { padding: 16px; border-radius: 18px; background: #eef6ff; border: 1px solid #d6e8ff; color: #29476a; margin-top: 14px; }
+    .status-list { display: grid; gap: 10px; margin-top: 16px; }
+    .status-item { display: flex; justify-content: space-between; gap: 12px; padding: 14px 16px; border-radius: 16px; background: var(--surface-2); border: 1px solid var(--line); }
+    .status-item strong { color: var(--text); }
+    footer { margin-top: 24px; padding: 34px 0 40px; background: #102744; color: #cfddf3; }
+    .footer-grid { display: grid; grid-template-columns: 1.3fr .8fr .8fr .9fr; gap: 18px; }
+    .footer-title { color: white; font-weight: 800; margin-bottom: 10px; }
+    .footer-links { display: grid; gap: 8px; font-size: 14px; }
+    @media (max-width: 980px) {
+      .header-main, .hero-grid, .grid-2, .grid-3, .footer-grid { grid-template-columns: 1fr; }
+      .panel { padding: 24px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="wrap topbar-inner">
+      <div><strong>Quote desk:</strong> equipment pricing, availability, replacement matches, and contractor pricing support</div>
+      <div>Need fast help? Email <strong>sales@himasupply.com</strong></div>
+    </div>
+  </div>
+
+  <header class="header">
+    <div class="wrap header-main">
+      <a class="brand" href="index.html">
+        <img src="logo-hima-supply.png" alt="HIMA Supply logo" />
+        <div>
+          <div class="brand-title">HIMA Supply</div>
+          <small>Quote Desk & Purchasing Support</small>
+        </div>
+      </a>
+      <label class="search" aria-label="Search equipment">
+        <span>🔎</span>
+        <input type="text" placeholder="Search condensers, heat pumps, air handlers, accessories..." />
+      </label>
+      <div class="header-cta">
+        <a class="btn btn-secondary" href="products.html">Browse Catalog</a>
+        <a class="btn btn-accent" href="contractor-program.html">Contractor Pricing</a>
+      </div>
+    </div>
+    <div class="mega-nav">
+      <div class="wrap mega-nav-inner">
+        <a href="category-air-conditioners.html">Air Conditioners</a>
+        <a href="category-heat-pumps.html">Heat Pumps</a>
+        <a href="category-mini-splits.html">Mini Splits</a>
+        <a href="category-furnaces.html">Furnaces</a>
+        <a href="category-air-handlers.html">Air Handlers</a>
+        <a href="category-package-units.html">Package Units</a>
+        <a href="category-parts-accessories.html">Parts & Accessories</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <div class="wrap hero-grid">
+        <div class="panel">
+          <span class="pill">Quote desk</span>
+          <h1>Request pricing, stock checks, or replacement equipment support</h1>
+          <p>This page is now positioned like a real HVAC supply quote desk. Large equipment does not need to feel vague or generic. It should feel like a purchasing workflow with account context, product detail, and urgency built in.</p>
+          <form>
+            <div class="grid-2">
+              <label>Name<input type="text" placeholder="Your name" /></label>
+              <label>Company Name<input type="text" placeholder="Company name" /></label>
+            </div>
+            <div class="grid-2">
+              <label>Email<input type="email" placeholder="you@example.com" /></label>
+              <label>Phone<input type="tel" placeholder="(000) 000-0000" /></label>
+            </div>
+            <div class="grid-2">
+              <label>Buyer Type
+                <select>
+                  <option>HVAC Contractor</option>
+                  <option>Property Owner</option>
+                  <option>Builder / Developer</option>
+                  <option>Facility / Commercial Buyer</option>
+                  <option>Other</option>
+                </select>
+              </label>
+              <label>Request Type
+                <select>
+                  <option>Equipment Quote</option>
+                  <option>Check Availability</option>
+                  <option>Replacement Match Help</option>
+                  <option>Contractor Pricing</option>
+                  <option>Project Quote</option>
+                </select>
+              </label>
+            </div>
+            <div class="grid-2">
+              <label>Product Category
+                <select>
+                  <option>Air Conditioners</option>
+                  <option>Heat Pumps</option>
+                  <option>Mini Splits</option>
+                  <option>Furnaces</option>
+                  <option>Air Handlers & Coils</option>
+                  <option>Package Units</option>
+                  <option>Parts & Accessories</option>
+                </select>
+              </label>
+              <label>Timeline
+                <select>
+                  <option>ASAP</option>
+                  <option>This Week</option>
+                  <option>This Month</option>
+                  <option>Planning Stage</option>
+                </select>
+              </label>
+            </div>
+            <label>Project / Product Details<textarea placeholder="Tell us the model if known, tonnage, quantity, job type, install market, ship-to ZIP, and any replacement-match notes."></textarea></label>
+            <div class="header-cta" style="justify-content:flex-start;">
+              <a class="btn btn-accent" href="mailto:sales@himasupply.com?subject=HIMA%20Supply%20Quote%20Request">Send Quote Request</a>
+              <a class="btn btn-primary" href="contractor-program.html">Open Contractor Account</a>
+            </div>
+          </form>
+        </div>
+        <div class="panel">
+          <h2>What this page should do</h2>
+          <ul>
+            <li>Support real equipment pricing and availability requests</li>
+            <li>Separate contractor buyers from casual inquiries</li>
+            <li>Capture replacement-match and project context up front</li>
+            <li>Keep large equipment quote-first without feeling weak or vague</li>
+          </ul>
+          <div class="status-list">
+            <div class="status-item"><strong>Quote turnaround</strong><span>Same day on stocked items</span></div>
+            <div class="status-item"><strong>Contractor pricing</strong><span>Available for repeat buyers and job accounts</span></div>
+            <div class="status-item"><strong>Availability checks</strong><span>Regional stock and lead time confirmation</span></div>
+          </div>
+          <div class="note">A strong HVAC supply site can still be quote-first for large systems. The difference is that this page feels like a purchasing desk, not a generic contact form.</div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap grid-3">
+        <article class="card">
+          <span class="pill">Best use case</span>
+          <h3>Central systems and condensers</h3>
+          <p>Large equipment should route into pricing and stock confirmation workflows, especially for replacement jobs and contractor purchasing.</p>
+        </article>
+        <article class="card">
+          <span class="pill">Best use case</span>
+          <h3>Replacement matches</h3>
+          <p>Buyers often need help matching tonnage, coil, or indoor section compatibility. This form should capture that early.</p>
+        </article>
+        <article class="card">
+          <span class="pill">Best use case</span>
+          <h3>Project and bulk quotes</h3>
+          <p>Builder, multifamily, and light commercial jobs need structured quote requests instead of casual contact-page messaging.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap footer-grid">
+      <div>
+        <div class="footer-title">HIMA Supply</div>
+        <p>HVAC supply house style storefront for equipment, parts, contractor purchasing, and quote-driven projects.</p>
+      </div>
+      <div>
+        <div class="footer-title">Shop</div>
+        <div class="footer-links">
+          <a href="products.html">Catalog</a>
+          <a href="category-air-conditioners.html">Air Conditioners</a>
+          <a href="category-heat-pumps.html">Heat Pumps</a>
+          <a href="category-parts-accessories.html">Parts & Accessories</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-title">Accounts</div>
+        <div class="footer-links">
+          <a href="contractor-program.html">Contractor Accounts</a>
+          <a href="request-quote.html">Request Quote</a>
+          <a href="brands.html">Brands</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-title">Support</div>
+        <div class="footer-links">
+          <a href="contact.html">Contact</a>
+          <a href="about.html">About</a>
+          <a href="terms.html">Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
